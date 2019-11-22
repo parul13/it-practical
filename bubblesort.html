@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title>Practical 3</title>
+		<script type="text/javascript">
+			function sort()
+			{
+				var num = (document.getElementById("number").value.toString()).split(" ");
+				var len = num.length;
+				var temp;
+				for(var i = 0;i < len;i++)
+				{
+					for(var j = 1;j < len-i;j++)
+					{
+						if(num[j-1]>num[j])
+						{
+							temp = num[j-1];
+							num[j-1] = num[j];
+							num[j] = temp;
+						}
+					}
+				}
+				document.getElementById("result").innerHTML = num.toString();
+			}
+		</script>
+	</head>
+
+	<body>
+		<form method="POST" onsubmit="sort()">
+			<b>Enter Elements with space separated</b>
+			<input type="text" name="num" id="number">
+			
+			<input type="submit" name="submit">
+		</form>
+		<p id="result">
+		
+	</body>
+</html>

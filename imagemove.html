@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>move and color change</title>
+</head>
+<body>
+  <form>
+  
+  Text <input type="text" id="1">
+  <input type="button" value="CHANGE COLOR"  onclick="color_change()"><br>
+  </form>
+  <img src="https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" id="2" height="400" width="600"><br><br>
+  <input type="button" value="move" onclick="move()">
+  <input type="button" value="stop" onclick="stop()">
+  <script type="text/javascript">
+    var b =5;
+    var w=null;
+    function color_change() {
+    setTimeout(function(){document.getElementById("1").style.color="red"},200);
+    }
+    function move()
+    {
+                      w=setInterval("changePos()",50);
+    }
+    function changePos()
+    {
+               var imp = document.getElementById("2");
+               imp.style.position="relative";
+               imp.style.left=(b)+"px";
+               b=b+5;
+    }
+    function stop()
+    {
+    clearInterval(w);
+    document.getElementById("2").style.left="0px";
+    }
+    </script>
+</body>
+</html>

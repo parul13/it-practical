@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>stack: push or pop</title>
+</head>
+<body>
+    
+    <form>
+        
+        enter element<input type="number" name="element" id="element">
+        <br>
+        
+        stack<input type="text" name="stack" id="stack">
+        <br>
+        <input type="button" value="PUSH" onclick=push()>
+        <input type="button" value="POP" onclick=pop()>
+        </form>
+      
+        <script type="text/javascript">
+            var arr=[];
+            function push()
+            {
+                var element=document.getElementById("element");
+                var stack=document.getElementById("stack");
+                if(element.value!=="")
+                arr.push(element.value);
+                else
+                alert("empty value can't be pushed");
+                stack.value=arr;
+                element.value="";
+            }
+            function pop()
+            {
+                var len=arr.length;
+                if(len===0)
+                {
+                    alert("already empty stack");
+                }
+                else{
+                    arr.pop();
+                    var stack=document.getElementById("stack");
+                    stack.value=arr;
+                }
+            }
+            </script>
+</body>
+</html>

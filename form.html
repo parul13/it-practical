@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title>Practical 6</title>
+		<script type="text/javascript">
+			function check()
+			{
+				var fname = document.getElementById("fname").value;
+				var lname = document.getElementById("lname").value;
+				var email = document.getElementById("email").value;
+				var address = document.getElementById("address").value;
+				var city = document.getElementById("city").value;
+				var state = document.getElementById("state").value;
+				var code = document.getElementById("code").value;
+				var country = document.getElementById("country").value;
+				
+				var op1 = document.getElementById("op1").checked;
+				var op2 = document.getElementById("op2").checked;
+				var op3 = document.getElementById("op3").checked;
+				var op4 = document.getElementById("op4").checked;
+				var option = (op1||op2||op3||op4);
+
+				var dropdown = document.getElementById("dropdown").value;
+
+				if(fname=="" || lname=="" || email=="" || address=="" || city=="" || state=="" || code=="" || country=="" || option==false || dropdown=="null" )
+					alert("Please fill All the Details and Answers...");
+				else
+				{
+					alert("Thank You...");
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<form id="form" method="POST" onsubmit="check()">
+                    <b>first name</b><input type="text" name="fname" id="fname"><br><br>
+			<input type="text" name="lname" id="lname"><b>Last Name</b><br><br>
+			<input type="email" name="email" id="email"><b>Email-Address</b><br><br>
+			<input type="text" name="address" id="address"><b>Address</b><br><br>
+			<input type="text" name="city" id="city"><b>City</b><br><br>
+
+			<input type="text" name="state" id="state"><b>State</b>
+			<input type="number" name="code" id="code"><b>Postal Code</b>
+			<input type="text" name="country" id="country"><b>Country</b><br><br>
+
+			<b>Please select the most appropriate statement</b><br>
+			<input type="radio" name="op" id = "op1" >I regularly purchase item online.<br>
+			<input type="radio" name="op" id = "op2" >I purchase items ocassionaly.<br>
+			<input type="radio" name="op" id = "op3" >I would consider purchasing in future.<br>
+			<input type="radio" name="op" id = "op4" >I prefer to shop in real store.<br><br>
+
+			<b>I am interested in(choose all the apply)</b><br>
+			<input type="checkbox" name="interest" value="in1">Miking<br>
+			<input type="checkbox" name="interest" value="in2">Mountain Biking<br>
+			<input type="checkbox" name="interest" value="in3">Camping<br>
+			<input type="checkbox" name="interest" value="in4">Rock Climing<br>
+			<input type="checkbox" name="interest" value="in5">Off-Road 4WD<br>
+			<input type="checkbox" name="interest" value="in6">Cross-country Skiing<br><br>
+
+			<b>I learned about this site from</b>
+			<select id="dropdown">
+				<option value="null">Select Option</option>
+				<option value="op1">Private Ads</option>
+				<option value="op2">Public Magzine</option>
+				<option value="op4">Friends/Relatives</option>
+				<option value="op3">Others</option>
+			</select><br><br>
+
+			<b>Comments</b><br>
+			<textarea name="comment" rows="10" cols="100"></textarea><br><br>
+
+			<input type="submit" name="submit">
+		</form>
+	</body>
+</html>

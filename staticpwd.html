@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>static password protection</title>
+</head>
+<body>
+    <form action="">
+    
+    name<input type="text" name="name" id="name">
+    <br>
+    
+    password<input type="password" name="password" id="pass">
+    <br>
+    <button type="submit" value="submit" onclick=match()>submit</button>
+    </form>
+    <script type="text/javascript">
+        function match()
+        {
+         const username="parul";
+         const pass="123";
+         var nameEntered=document.getElementById("name").value;
+         var passEntered=document.getElementById("pass").value;
+         if(!nameEntered||!passEntered)
+         {
+             alert("please fill both the entries");
+         }
+         else if(pass===passEntered&&username===nameEntered)
+         {
+             alert("correct values");
+         }
+         else
+         {
+             alert("your values do not match");
+         }
+        }
+    </script>
+</body>
+</html>
